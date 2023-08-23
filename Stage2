@@ -1,0 +1,114 @@
+Stage 2
+
+Overview  of Nessus:
+Nessus is a widely used vulnerability assessment tool developed by Tenable Network Security. It is designed to identify and assess vulnerabilities in computer systems, networks, and applications. Nessus helps organizations identify potential security weaknesses in their IT infrastructure by conducting comprehensive scans and providing detailed reports on identified vulnerabilities.
+Key features of Nessus include:
+
+1. Vulnerability Scanning: Nessus scans networks, systems, and applications for known vulnerabilities. It uses a vast database of vulnerability checks and plugins to identify security issues.
+
+2. Remote and Local Scanning: Nessus can perform both remote and local vulnerability scans. Remote scans are conducted over the network, while local scans are executed on the target system itself.
+
+3. Compliance Checking: The tool can assess systems against various compliance standards and policies, helping organizations meet regulatory requirements.
+
+4. Customizable Scans: Users can configure scans based on their specific needs, such as targeting certain IP ranges, ports, or specific vulnerabilities.
+
+5. Reporting: Nessus generates detailed reports after each scan, outlining discovered vulnerabilities, their severity levels, and recommendations for mitigation.
+
+6. Risk Assessment: It assigns severity levels (such as high, medium, or low) to vulnerabilities based on their potential impact and likelihood.
+
+7. Continuous Monitoring: Nessus supports continuous monitoring by allowing regular scans to ensure that new vulnerabilities are promptly identified and addressed.
+
+8. Integration: Nessus can integrate with other security tools and platforms, enabling seamless collaboration and remediation.
+
+It's worth noting that software and tools like Nessus constantly evolve, so there might have been updates or changes beyond September 2021. Always refer to the official Nessus documentation or other reliable sources for the latest information on its features and capabilities.
+
+Target website :
+www.nec.edu.in (National Engineering College, Kovilpatti, Tamilnadu)
+Target ip address:
+103.84.178.40
+List of vulnerability 
+
+S. No.	SEVERITY	CVSS V3.0	VPR SCORE	PLUGIN	NAME
+1	Critical	9.8	9.4	172186
+Apache 2.4.x < 2.4.56 Multiple Vulnerabilities
+2	Critical	9.0	6.5	170113
+Apache 2.4.x < 2.4.55 Multiple Vulnerabilities
+3	Medium	6.5	-	51192
+SSL Certificate Cannot Be Trusted
+4	Medium	5.3	2.2	10704
+Apache Multiviews Arbitrary Directory Listing
+
+REPORT:-
+1.	Vulnerability Name: Apache 2.4.x < 2.4.56 Multiple Vulnerabilities
+Severity: Critical
+Plugin: 172186
+Port: 443 / tcp / www
+Description:
+The version of Apache httpd installed on the remote host is prior to 2.4.56. It is, therefore, affected by multiple vulnerabilities as referenced in the 2.4.56 advisory.
+
+- HTTP request splitting with mod_rewrite and mod_proxy: Some mod_proxy configurations on Apache HTTP Server versions 2.4.0 through 2.4.55 allow a HTTP Request Smuggling attack. Configurations are affected when mod_proxy is enabled along with some form of RewriteRule or ProxyPassMatch in which a non-specific pattern matches some portion of the user-supplied request-target (URL) data and is then re-inserted into the proxied request-target using variable substitution. For example, something like: RewriteEngine on RewriteRule ^/here/(.*) http://example.com:8080/elsewhere?$1 http://example.com:8080/elsewhere ; [P] ProxyPassReverse /here/ http://example.com:8080/ http://example.com:8080/ Request splitting/smuggling could result in bypass of access controls in the proxy server, proxying unintended URLs to existing origin servers, and cache poisoning. Acknowledgements: finder: Lars Krapf of Adobe (CVE-2023-25690)
+
+- Apache HTTP Server: mod_proxy_uwsgi HTTP response splitting: HTTP Response Smuggling vulnerability in Apache HTTP Server via mod_proxy_uwsgi. This issue affects Apache HTTP Server: from 2.4.30 through 2.4.55.
+Special characters in the origin response header can truncate/split the response forwarded to the client.
+Acknowledgements: finder: Dimas Fariski Setyawan Putra (nyxsorcerer) (CVE-2023-27522)
+solution:
+Upgrade to Apache version 2.4.56 or later.
+Business Impact:
+1. Website Outages: Exploiting vulnerabilities in the web server could lead to crashes, outages, or denial-of-service attacks, causing the organization's website to become unavailable. This can result in lost revenue, damage to reputation, and customer frustration.
+2. Data Breaches: Depending on the nature of the vulnerabilities, attackers might be able to gain unauthorized access to sensitive data or server configurations. This could result in data breaches, compromising customer information, proprietary data, or sensitive business data.
+2.	Vulnerability Name: Apache 2.4.x < 2.4.55 Multiple Vulnerabilities
+Severity: Critical
+Plugin: 170113
+Port: 443 / tcp / www
+Description:
+The version of Apache httpd installed on the remote host is prior to 2.4.55. It is, therefore, affected by multiple vulnerabilities as referenced in the 2.4.55 advisory.
+
+- A carefully crafted If: request header can cause a memory read, or write of a single zero byte, in a pool (heap) memory location beyond the header value sent. This could cause the process to crash. This issue affects Apache HTTP Server 2.4.54 and earlier. (CVE-2006-20001)
+
+- Inconsistent Interpretation of HTTP Requests ('HTTP Request Smuggling') vulnerability in mod_proxy_ajp of Apache HTTP Server allows an attacker to smuggle requests to the AJP server it forwards requests to. This issue affects Apache HTTP Server Apache HTTP Server 2.4 version 2.4.54 and prior versions.
+(CVE-2022-36760)
+
+- Prior to Apache HTTP Server 2.4.55, a malicious backend can cause the response headers to be truncated early, resulting in some headers being incorporated into the response body. If the later headers have any security purpose, they will not be interpreted by the client. (CVE-2022-37436)
+solution:
+Upgrade to Apache version 2.4.56 or later.
+Business Impact:
+1. Website Outages: Exploiting vulnerabilities in the web server could lead to crashes, outages, or denial-of-service attacks, causing the organization's website to become unavailable. This can result in lost revenue, damage to reputation, and customer frustration.
+2. Malware Distribution: If attackers gain control over a compromised web server, they might use it to distribute malware or launch attacks on visitors. This can lead to infections on users' computers, which could have legal, financial, and reputational implications.
+3.	Vulnerability Name: SSL Certificate Cannot Be Trusted
+Severity: Medium
+Plugin: 51192
+Port: 
+	
+4444 / tcp / www	
+4443 / tcp / www	
+Description:
+The server's X.509 certificate cannot be trusted. This situation can occur in three different ways, in which the chain of trust can be broken, as stated below :
+
+- First, the top of the certificate chain sent by the server might not be descended from a known public certificate authority. This can occur either when the top of the chain is an unrecognized, self-signed certificate, or when intermediate certificates are missing that would connect the top of the certificate chain to a known public certificate authority.
+
+- Second, the certificate chain may contain a certificate that is not valid at the time of the scan. This can occur either when the scan occurs before one of the certificate's 'notBefore' dates, or after one of the certificate's 'notAfter' dates.
+
+- Third, the certificate chain may contain a signature that either didn't match the certificate's information or could not be verified. Bad signatures can be fixed by getting the certificate with the bad signature to be re-signed by its issuer. Signatures that could not be verified are the result of the certificate's issuer using a signing algorithm that Nessus either does not support or does not recognize.
+
+If the remote host is a public host in production, any break in the chain makes it more difficult for users to verify the authenticity and identity of the web server. This could make it easier to carry out man-in-the-middle attacks against the remote host.
+solution:
+Purchase or generate a proper SSL certificate for this service.
+Business Impact:
+Competitive Impact: A publicized security incident could cause customers to lose confidence in the organization's ability to secure their data. This loss of trust might drive customers to competitors who are perceived to have stronger security practices.
+Reputation Damage: Publicly known vulnerabilities and breaches can damage an organization's reputation, eroding trust and confidence among customers, partners, and stakeholders.
+4.	Vulnerability Name: Apache Multiviews Arbitrary Directory Listing
+Severity: Medium
+Plugin: 10704
+Port: 80 / tcp / www
+Description:
+The Apache web server running on the remote host is affected by an information disclosure vulnerability. An unauthenticated, remote attacker can exploit this, by sending a crafted request, to display a listing of a remote directory, even if a valid index file exists in the directory.
+
+For Apache web server later than 1.3.22, review listing directory configuration to avoid disclosing sensitive information
+solution:
+Upgrade to Apache version 1.3.22 or later. Alternatively, as a workaround, disable Multiviews.
+Business Impact:
+Business Disruption: Exploiting vulnerabilities could disrupt the organization's online services, impacting operations and customer interactions. This can lead to lost productivity, missed business opportunities, and unhappy customers.
+Legal and Regulatory Consequences: Depending on the nature of the vulnerabilities and the data involved, organizations might face legal consequences for not adequately protecting customer data or for not complying with data protection regulations.
+Reputation Damage: Publicly known vulnerabilities and breaches can damage an organization's reputation, eroding trust and confidence among customers, partners, and stakeholders.
+
+
