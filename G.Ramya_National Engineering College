@@ -1,0 +1,64 @@
+Title of the project :
+Enhancing Security Operations: SIEM Qradar & SOC Dashboard Management
+
+Overview :- 
+1.	Implementing SIEM Qradar
+SIEM (Security Information and Event Management) solutions like Qradar can provide with a comprehensive view of the organization's security posture and help to detect and respond to security incidents. 
+2. Integrating Data Sources
+To make the most of  SIEM Qradar, it is important to integrate various data sources into the platform. This can include firewalls, IDS/IPS systems, antivirus logs, and other security devices. By collecting data from different sources, we can gain a holistic view of the organization's security landscape.
+3. Customizing Dashboards
+Qradar allows to create customized dashboards that provide real-time visibility into crucial security metrics and events. Tailor these dashboards according to  specific requirements, ensuring that we have a clear overview of organization's security posture and any emerging threats.
+4. Setting Up Alerts and Notifications
+To prevent potential security incidents from going unnoticed, configure alerts and notifications within Qradar system. Determine the thresholds and conditions for generating alerts and ensure that we have appropriate escalation procedures in place to address any identified threats.
+5. SOC Dashboard Management
+Manage the SOC dashboard effectively by regularly reviewing and fine-tuning it. This includes ensuring that the right metrics and key performance indicators (KPIs) are being tracked, and that the dashboard provides actionable insights to SOC analysts. Regularly update and optimize the dashboard based on the evolving security landscape and organizational requirements.
+6. Continuous Monitoring and Analysis
+Maintain a proactive approach to security by continuously monitoring and analyzing the data collected by Qradar. This allows us to quickly detect any anomalies or suspicious activities and respond promptly to mitigate potential risks. Use the insights gained from monitoring and analysis to improve wer security operations and strengthen wer organization's defenses.
+By following these steps, we can enhance the security operations and effectively manage the SIEM Qradar and SOC dashboard. 
+
+List of teammates–
+
+S.No	Name	Collage	Contact
+1	G. Ramya	National Engineering College	8637698495
+
+ List of Vulnerability Table ➖
+
+S.no	Vulnerability Name	CWE - No
+
+1	172186 - Apache 2.4.x < 2.4.56 Multiple Vulnerabilities	CVE CVE-2023-25690 CVE CVE-2023-27522 XREF IAVA:2023-A-0124
+2	Apache 2.4.x < 2.4.55 Multiple Vulnerabilities
+	IAVA:  2023-A-0047-S
+CVE:  CVE-2006-20001, CVE-2022-36760, CVE-2022-37436
+
+3	 cpe:/a:apache:http_server	EDB-ID:  21002
+OWASP:  OWASP-CM-004
+BID:  3009
+CVE:  CVE-2001-0731
+                            
+     REPORT:-
+1.	Vulnerability Name:-
+172186 - Apache 2.4.x < 2.4.56 Multiple Vulnerabilities
+CWE : 
+CWE-444 - Inconsistent Interpretation of HTTP Requests ('HTTP Request/Response Smuggling')
+OWASP Category:
+Security Misconfiguration
+Description:-
+Just like misconfigured access controls, more general security configuration errors are huge risks that give attackers quick, easy access to sensitive data and site areas.
+2.	Vulnerability Name:
+Apache 2.4.x < 2.4.55 Multiple Vulnerabilities
+CWE : 
+moderate: mod_dav out of bounds read, or write of zero byte (CVE-2006-20001)A carefully crafted If: request header can cause a memory read, or write of a single zero byte, in a pool (heap) memory location beyond the header value sent. This could cause the process to crash.
+This issue affects Apache HTTP Server 2.4.54 and earlier.
+OWASP Category:
+Insufficient Logging and Monitoring
+Description:-
+Failing to log errors or attacks and poor monitoring practices can introduce a human element to security risks. Threat actors count on a lack of monitoring and slower remediation times so that they can carry out their attacks before you have time to notice or react.
+3.	Vulnerability Name:-
+cpe:/a:apache:http_server
+CWE : 
+CVE-2001-0731
+OWASP Category:
+Using Components with Known Vulnerabilities
+Description:-
+No matter how secure your own code is, attackers can exploit APIs, dependencies and other third-party components if they are not themselves secure.
+Detecting vulnerability is the stage 1 where we understand web application testing using Qradar.
